@@ -2,4 +2,5 @@
 members = [
     "reverse_endian",
     "reverse_endian_derive",
+    "reverse_endian_test_suite",
 ]
