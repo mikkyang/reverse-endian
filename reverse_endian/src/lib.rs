@@ -21,3 +21,15 @@ reverse_endian_impl!(i16, i16);
 reverse_endian_impl!(i32, i32);
 reverse_endian_impl!(i64, i64);
 reverse_endian_impl!(i128, i128);
+
+#[cfg(test)]
+mod tests {
+    use super::ReverseEndian;
+
+    #[test]
+    fn test_u32() {
+        let original: u32 = 0xd4c3b2a1;
+        let reversed: u32 = 0xa1b2c3d4;
+        assert_eq!(reversed, original.reverse_endian());
+    }
+}
