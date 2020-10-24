@@ -24,6 +24,18 @@ reverse_endian_impl!(i32, i32);
 reverse_endian_impl!(i64, i64);
 reverse_endian_impl!(i128, i128);
 
+// Re-export #[derive(ReverseEndian)].
+//
+// The reason re-exporting is not enabled by default is that disabling it would
+// be annoying for crates that provide handwritten impls.
+#[cfg(feature = "reverse_endian_derive")]
+#[allow(unused_imports)]
+#[macro_use]
+extern crate reverse_endian_derive;
+#[cfg(feature = "reverse_endian_derive")]
+#[doc(hidden)]
+pub use reverse_endian_derive::*;
+
 #[cfg(test)]
 mod tests {
     use super::ReverseEndian;
