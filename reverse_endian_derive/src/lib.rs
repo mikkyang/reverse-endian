@@ -2,7 +2,6 @@ extern crate proc_macro2;
 extern crate quote;
 extern crate syn;
 
-use proc_macro2::TokenStream;
 use quote::{quote, quote_spanned};
 use syn::spanned::Spanned;
 use syn::{parse_quote, Data, Fields, GenericParam, Generics, Ident, Index};
@@ -19,7 +18,7 @@ fn add_trait_bounds(mut generics: Generics) -> Generics {
     generics
 }
 
-fn reverse_endian(name: &Ident, data: &Data) -> TokenStream {
+fn reverse_endian(name: &Ident, data: &Data) -> proc_macro2::TokenStream {
     match *data {
         Data::Struct(ref data) => match data.fields {
             Fields::Named(ref fields) => {
