@@ -11,6 +11,6 @@ name = "reverse_endian_derive"
 proc-macro = true
 
 [dependencies]
-proc = "0.1"
+proc-macro2 = "1.0"
 quote = "1.0"
 syn = "1.0"
