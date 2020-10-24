@@ -13,10 +13,12 @@ macro_rules! reverse_endian_impl {
     };
 }
 
+reverse_endian_impl!(usize, usize);
 reverse_endian_impl!(u16, u16);
 reverse_endian_impl!(u32, u32);
 reverse_endian_impl!(u64, u64);
 reverse_endian_impl!(u128, u128);
+reverse_endian_impl!(isize, isize);
 reverse_endian_impl!(i16, i16);
 reverse_endian_impl!(i32, i32);
 reverse_endian_impl!(i64, i64);
